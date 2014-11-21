@@ -1,35 +1,48 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '= 4.1.4'
 
-# Use postgresql as the database for Active Record
+gem 'nokogiri'
+gem 'slim-rails'
+gem 'jquery-rails'
+gem 'unicorn-rails'
 gem 'pg'
+gem 'sorcery'
+gem 'cancancan'
+gem 'role_model'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
+gem 'sass-rails', '~> 4.0.3'
+gem 'compass-rails'
+gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'guard-rspec', require: false
+  gem 'pry-rails'
+  gem 'quiet_assets'
+  gem 'spring'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+  gem 'rb-readline'
+  gem 'rb-inotify', require: false
+  gem 'rb-fsevent', require: false
+  gem 'rb-fchange', require: false
+end
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+group :development, :test do
+  gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails', '~> 3.0.0'
+end
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
+  gem 'webmock'
 end
 
 # Use ActiveModel has_secure_password
