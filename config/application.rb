@@ -21,6 +21,10 @@ module Instruct
     config.active_record.default_timezone = :local
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    
+
+    
     # Configure default generators
     config.generators do |g|
     g.helper false

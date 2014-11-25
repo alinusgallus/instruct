@@ -10,6 +10,7 @@ gem 'pg'
 gem 'sorcery'
 gem 'cancancan'
 gem 'role_model'
+gem 'turbolinks'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'compass-rails'
@@ -34,6 +35,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0.0'
+  
 end
 
 group :test do
@@ -41,7 +43,7 @@ group :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
   gem 'webmock'
 end
 
