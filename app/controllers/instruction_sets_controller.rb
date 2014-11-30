@@ -7,11 +7,13 @@ class InstructionSetsController < ApplicationController
 		@instruction_set = InstructionSet.new(instruction_set_params)
 		if @instruction_set.save
 			flash[:success] = "New instruction set added"
-			redirect_to @instruction_set
+			redirect_to edit_instruction_set_path(@instruction_set.id)
 		else 
 			render 'new'	
 		end
 	end
+
+	
 
 	def show
 		@instruction_set = InstructionSet.find(params[:id])
@@ -45,6 +47,6 @@ class InstructionSetsController < ApplicationController
 
 	private 
 	def instruction_set_params
-		params.require(:instruction_set).permit(:name, :description)
+		params.require(:instruction_set).permit(:name, :description, instructions_attributes:[:name,:description,:precondition,:step])
 	end
 end

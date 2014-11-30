@@ -22,7 +22,10 @@ module Instruct
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-    
+    #Try to configure sass
+    config.sass.preferred_syntax = :sass
+    config.sass.line_comments = false
+    config.sass.cache = false
 
     
     # Configure default generators

@@ -1,9 +1,45 @@
-=form_for @instruction_set do |f|
+.main
+	p 
+		h1
+			=@instruction_set.name
+			=link_to 'edit'
+
 	p
-		=f.label :name
-		=f.text_field :name
+		=@instruction_set.description
+		=link_to'edit'
+
+
+	u
+		label	step 1 precondition
 	p
-		=f.label :description
-		=f.text_field :description
+		#pre_cond
+			textarea placeholder="step pre condition" 
+	
+	u
+		label step 1 description
 	p
-		=f.submit
+		#step_content 
+			textarea placeholder="step description" 
+	p
+		
+		button> add step
+			
+		button save changes
+		
+
+.left 
+	aside
+		#list
+			ul
+				
+					li
+						#short_step step 1 
+							
+						<a href="">Delete</a> 
+
+						<a href="">Update</a>
+					
+					
+
+
+

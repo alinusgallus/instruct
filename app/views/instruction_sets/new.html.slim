@@ -1,11 +1,22 @@
-= form_for @instruction_set do |f|
-	p
-		= f.label :name
-		= f.text_field :name
-	p
-		= f.label :description
-		= f.text_field :description
-	p
-		= f.submit
 
-		
+
+
+.main
+
+
+
+
+
+	
+
+	p Create and share lists of instructions about what you know best. Instruct will guide you to write clear and actionnable instructions.
+
+	= form_for @instruction_set do |f|
+
+		p
+			= f.text_field :name, placeholder: "name"
+		p
+			= f.text_area :description, placeholder: "description"
+		p
+			= f.submit "create", class: "button"
+
