@@ -8,7 +8,14 @@ body{
 	color: $chocolate;
 }
 header {
+	height:100%;
+	width:100%;
+	background-color:$orange-light;
 	font-size: 54px;
+	position: fixed;
+	top: 0px;
+	left:0px;
+	height:100px;
 }
 	
 aside{
@@ -23,9 +30,29 @@ aside{
 }
 
 .main{
-	margin:100px 0 0 100px;
+	margin:100px;
+
 	float: left;
 	width: 600px;
+
+	.gallery{
+	width:900px;
+	
+	article{
+		margin:40px;
+		padding: 10px;
+		width:200px;
+		height:200px;
+		background-color:$orange-dark;
+		float: right;
+		box-shadow: 10px 10px 5px 0px $chocolate;
+
+		p{
+			background-color:$orange-light;
+			color:$chocolate;
+		}
+	}
+}
 }
 
 
@@ -43,10 +70,13 @@ textarea{
 	width: 500px;
 	height: 55px;
 	outline: 0px;
-	background-color: $chocolate;
-	color: $orange-light;
+	background-color: $orange-light;
+	color: $chocolate;
 	font-size: 15px;
-	border:3px solid $orange-dark;
+	border:1px solid $chocolate;
+	box-shadow: 10px 10px 5px 0px $chocolate;
+	margin: 5px 0 20px 0;
+
 }
 .button{
 	width: 100px;
@@ -78,7 +108,8 @@ button{
 		background-color: $orange-light;
 		color: $chocolate;
 		font-size: 14px;
-		border:0px solid $chocolate;
+		border:1px solid $chocolate;
+		box-shadow: 10px 10px 5px 0px $chocolate;
 	}
 	textarea{
 		width:300px;
@@ -90,10 +121,26 @@ button{
 		border:0px solid $chocolate;
 	}
 }
+#step-input{
+	display: none;
+	margin:0 0 0 40px;
+}
 	
 ::-webkit-input-placeholder {
 	color:grey; 
 }
+
+#save{
+	margin:0 0 0 40px;
+}
+
+#add-step{
+	margin:0 0 0 40px;
+}
+
+
+
+
 
 
 

@@ -1,4 +1,32 @@
-p
- = @instruction_set.name
- = @instruction_set.description
- 
+.main
+
+	div#setid =@instruction_set.id
+	p 
+		h1#setname
+			=@instruction_set.name
+			
+
+	p
+		h2#setdesc
+			=@instruction_set.description
+		
+	div#steps
+		ol.silent
+			-@instructions_array.each do |ins|
+				li
+					p.step = ins.name
+					p.stepdesc = ins.description
+					
+			
+	
+	div#step-input
+		form#step-input-form
+			textarea#name [placeholder="step name" required]
+			br
+			textarea#description [placeholder="desciption" required]
+			br
+			button type="sumbit" save
+			 
+	button#add-step> type="sumbit" add step
+		 			
+	button#save save changes

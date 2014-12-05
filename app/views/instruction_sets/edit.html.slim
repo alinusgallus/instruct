@@ -1,45 +1,33 @@
 .main
+
+	div#setid =@instruction_set.id
+
 	p 
-		h1
+		h1#setname
 			=@instruction_set.name
-			=link_to 'edit'
 
 	p
-		=@instruction_set.description
-		=link_to'edit'
-
-
-	u
-		label	step 1 precondition
-	p
-		#pre_cond
-			textarea placeholder="step pre condition" 
-	
-	u
-		label step 1 description
-	p
-		#step_content 
-			textarea placeholder="step description" 
-	p
+		h2#setdesc
+			=@instruction_set.description
 		
-		button> add step
+	div#steps	
+		ol.silent
 			
-		button save changes
+	
+	div#step-input
+		form#step-input-form
+			textarea#name [placeholder="step name" required]
+			br
+			textarea#description [placeholder="desciption" required]
+			br
+			button type="sumbit" save
+			 
+	button#add-step> type="sumbit" add step
+		 			
+	button#save save changes
 		
-
-.left 
-	aside
-		#list
-			ul
 				
-					li
-						#short_step step 1 
-							
-						<a href="">Delete</a> 
-
-						<a href="">Update</a>
-					
-					
 
 
+		
 

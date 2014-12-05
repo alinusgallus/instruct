@@ -1,5 +1,6 @@
 class Instruction < ActiveRecord::Base
-	belongs_to :instruction_set
+	belongs_to :instructionSet
+
   validates :name, presence: true
-	validates :step, presence: true, uniqueness: true
+	validates :step, presence: true
 end

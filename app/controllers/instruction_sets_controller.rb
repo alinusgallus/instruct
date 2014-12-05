@@ -17,6 +17,7 @@ class InstructionSetsController < ApplicationController
 
 	def show
 		@instruction_set = InstructionSet.find(params[:id])
+		@instructions_array = @instruction_set.instructions
 	end
 
 	def edit
@@ -26,11 +27,14 @@ class InstructionSetsController < ApplicationController
 
 	def update
 		@instruction_set=InstructionSet.find(params[:id])
-		if @instruction_set.update(instruction_set_params)
-			flash[:success] = "Instruction set was sucessfully edited"
-			redirect_to @instruction_set
-		else
-			render 'edit'
+		respond_to do |format|
+			if @instruction_set.update(instruction_set_params)
+				format.json {render json: @instruction_set}
+				#lash[:success] = "Instruction set was sucessfully edited"
+				#redirect_to @instruction_set
+			else
+				render 'edit'
+			end
 		end
 	end
 
