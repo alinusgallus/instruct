@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '= 4.1.4'
+ruby '2.0.0'
 
+gem 'rails', '= 4.1.4'
+gem 'rails_12factor'
 gem 'nokogiri'
 gem 'slim-rails'
 gem 'jquery-rails'
