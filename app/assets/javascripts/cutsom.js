@@ -1,9 +1,13 @@
 	$(document).ready(function () {
+
+
+
 		$('#add-step').click(function () {
-	      $('#step-input').show();
-	      $(this).hide();
-	      $('#save').hide();
-	    });
+	    $('#step-input').show();
+	    $(this).hide();
+	    $('#save').hide();
+	   });
+
 	  $('#step-input-form').submit(function() {
       var $name = $(this).find('#name');
       var $description = $(this).find('#description');
@@ -17,40 +21,65 @@
       $('#step-input').hide();
       $('#add-step').show();
       $('#save').show();
-
       return false;
     });
-    $('#steps').on('click', '.step', function () {
-      var step = $(this).text();
-      console.log(step)
-      if (!step) {
-        return;
-      }
-    
- 		  $(this).html('<input class="silent" type="text" name="step_input" value="' + step + '">');
 
+    var stepHandler = function(e){
+    	e.stopPropagation();
+
+      var step = $(this).find('.step').text();
+
+      //remove step handlers
+    	$('#steps').unbind('click');
+    	$('.step').unbind('click');
+      $('.stepList').unbind('click');
+      $('.setdesc').unbind('click');
+
+    	
       
-    });
-    
+    	$(this).html('<input class="silent" type="text" name="step_input" value="' +step+ '">');
 
-    $('#steps').on('click', '.stepdesc', function () {
-      var stepdesc = $(this).text();
-      if (!stepdesc) {
-        return;
-      }
-      $(this).html('<input class="silent" type="text" name="step_input" value="' + stepdesc + '">');
-     });
- 
+    	$(document).click(function(e){
+    		//$activeInput = $('#steps').find('input');
+        //for some reason this does not work...
+
+    		if ($(e.target)[0] != $('.stepList').find('input')[0]){
+    			
+          var step = $('.stepList').find('input').val();
+
+    			$('.stepList').find('input').parent().html('<p class="step">' + step + '</p>');
+
+    			$(document).off('click');
+    			$('#steps').on('click','.stepList',stepHandler);
+       }
+       
+    		
+    	});
+    };
+    $('#steps').on('click', '.stepList', stepHandler);
+
     $('#steps').on('keyup', 'input', function (e) {
       if (e.keyCode == 13) {
         var step = $(this).val();
         $(this).parent().html(step);
       }
-     });
-		//$('.main').blur(function(){
-		//	var step = $(this > 'ul').val();
-    //   $(this).parent().html(step);
-		//});
+    });
+
+    //$('#steps').on('click', '.stepdesc', function () {
+      //var stepdesc = $(this).text();
+      //if (!stepdesc) {
+        //return;
+      //}
+      //$(this).html('<input class="silent" type="text" name="step_input" value="' + stepdesc + '">');
+     //});
+ 
+    //$('#steps').on('keyup', 'input', function (e) {
+      //if (e.keyCode == 13) {
+        //var step = $(this).val();
+        //$(this).parent().html(step);
+      //}
+     //});
+		
 
 		
 

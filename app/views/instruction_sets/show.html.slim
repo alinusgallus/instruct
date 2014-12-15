@@ -1,5 +1,6 @@
 .main
 
+
 	div#setid =@instruction_set.id
 	p 
 		h1#setname
@@ -13,7 +14,7 @@
 	div#steps
 		ol.silent
 			-@instructions_array.each do |ins|
-				li
+				li.stepList
 					p.step = ins.name
 					p.stepdesc = ins.description
 					

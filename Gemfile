@@ -13,6 +13,7 @@ gem 'sorcery'
 gem 'cancancan'
 gem 'role_model'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'compass-rails'
