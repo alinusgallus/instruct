@@ -1,7 +1,7 @@
 .main
 
 
-	div#setid =@instruction_set.id
+	div#setid[hidden] =@instruction_set.id
 	p 
 		h1#setname
 			=@instruction_set.name
@@ -15,8 +15,15 @@
 		ol.silent
 			-@instructions_array.each do |ins|
 				li.stepList
-					p.step = ins.name
+					p#stepid[hidden] = ins.id 
+
+					p.step= ins.name 
+				
 					p.stepdesc = ins.description
+
+					button.delete delete
+
+
 					
 			
 	

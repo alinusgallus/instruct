@@ -51,6 +51,6 @@ class InstructionSetsController < ApplicationController
 
 	private 
 	def instruction_set_params
-		params.require(:instruction_set).permit(:name, :description, instructions_attributes:[:name,:description,:precondition,:step])
+		params.require(:instruction_set).permit(:name, :description, instructions_attributes:[:id,:name,:description,:precondition,:step,:_destroy])
 	end
 end

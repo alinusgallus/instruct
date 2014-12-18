@@ -1,17 +1,24 @@
 .main
 
-	div#setid =@instruction_set.id
 
+	div#setid =@instruction_set.id
 	p 
 		h1#setname
 			=@instruction_set.name
+			
 
 	p
 		h2#setdesc
 			=@instruction_set.description
 		
-	div#steps	
+	div#steps
 		ol.silent
+			-@instructions_array.each do |ins|
+				li.stepList
+					p.step = ins.name
+				
+					p.stepdesc = ins.description
+					
 			
 	
 	div#step-input
@@ -25,9 +32,3 @@
 	button#add-step> type="sumbit" add step
 		 			
 	button#save save changes
-		
-				
-
-
-		
-
